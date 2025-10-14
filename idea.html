@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div id="transitioner"></div>
+    <div class="ham" id="ham" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+    </div>
+    <div class="nav_backdrop">
+        <h1>Opening Nav</h1>
+    </div>
+    <nav id="nav">
+        <h1>MENU</h1>
+        <ul id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+            <li>
+                <button onclick="pushToIndex()" id="link_index">
+                    <img class="image"
+                        src="https://images.unsplash.com/photo-1610194352361-4c81a6a8967e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"
+                        draggable="false" />
+                </button>
+            </li>
+            <li>
+                <button onclick="pushToIdea()" id="link_idea">
+                    <img class="image"
+                        src="https://images.unsplash.com/photo-1618202133208-2907bebba9e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                        draggable="false" />
+                </button>
+            </li>
+            <li>
+                <button onclick="pushToTeam()" id="link_team">
+                    <img class="image"
+                        src="https://images.unsplash.com/photo-1618202133208-2907bebba9e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                        draggable="false" />
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+
+
+    <div class="wrapper">
+        <header>
+            <p>/idea</p>
+        </header>
+
+        <br>
+
+        <main class="idea">
+            <h1>My Proposal</h1>
+            <p id="typewriter-text"></p>
+        </main>
+
+        <section class="idea summary">
+            <details>
+                <summary>Better And Effecient</summary>
+                <p>The system aims to enhance patient experience, reduce administrative workload, and improve overall
+                    clinic efficiency through automation and intelligent scheduling.</p>
+            </details>
+        </section>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <section class="idea features">
+            <div class="features-grid">
+                <!-- For Patients Card -->
+                <div class="feature-card patients-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-user-injured"></i>
+                        </div>
+                        <h2 class="card-title">For Patients</h2>
+                    </div>
+                    <ul class="feature-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div class="feature-text">
+                                <div class="feature-name">Easy Appointment Booking</div>
+                                <div class="feature-desc">Schedule, reschedule, or cancel appointments with just a few
+                                    taps.</div>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div class="feature-text">
+                                <div class="feature-name">Dentist Directory</div>
+                                <div class="feature-desc">View dentist profiles, specialties, and availability.</div>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div class="feature-text">
+                                <div class="feature-name">Real-time Notifications</div>
+                                <div class="feature-desc">Receive SMS, email, or in-app reminders for upcoming
+                                    appointments.</div>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div class="feature-text">
+                                <div class="feature-name">Digital Dental Records</div>
+                                <div class="feature-desc">Access past treatments, prescriptions, and medical notes
+                                    securely.</div>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div class="feature-text">
+                                <div class="feature-name">Online Consultation</div>
+                                <div class="feature-desc">Video call or chat feature for quick dental advice or
+                                    follow-ups.</div>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div class="feature-text">
+                                <div class="feature-name">Feedback & Ratings</div>
+                                <div class="feature-desc">Leave reviews to help improve service quality.</div>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div class="feature-text">
+                                <div class="feature-name">Payment Integration</div>
+                                <div class="feature-desc">Pay consultation or treatment fees via credit card, GCash,
+                                    PayPal, etc.</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- For Clinics & Dentists Card -->
+                <div class="feature-card clinics-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <h2 class="card-title">For Clinics & Dentists</h2>
+                    </div>
+                    <ul class="feature-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div class="feature-text">
+                                <div class="feature-name">Smart Schedule Management</div>
+                                <div class="feature-desc">View, approve, or modify patient bookings in real-time.</div>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div class="feature-text">
+                                <div class="feature-name">Patient Record System</div>
+                                <div class="feature-desc">Maintain complete patient histories, including images and
+                                    notes.</div>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div class="feature-text">
+                                <div class="feature-name">Automated Reminders</div>
+                                <div class="feature-desc">Reduce no-shows with automated appointment reminders.</div>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div class="feature-text">
+                                <div class="feature-name">Analytics Dashboard</div>
+                                <div class="feature-desc">Track appointments, revenue, and clinic performance.</div>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div class="feature-text">
+                                <div class="feature-name">Staff Management</div>
+                                <div class="feature-desc">Assign tasks, monitor attendance, and manage multiple
+                                    branches.</div>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div class="feature-text">
+                                <div class="feature-name">Inventory Tracking</div>
+                                <div class="feature-desc">Monitor supplies and set alerts for low-stock dental
+                                    materials.</div>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div class="feature-text">
+                                <div class="feature-name">Data Security & Compliance</div>
+                                <div class="feature-desc">Ensure patient data is protected with encryption and access
+                                    control.</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Optional Add-ons Card -->
+                <div class="feature-card addons-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h2 class="card-title">Optional Add-ons</h2>
+                    </div>
+                    <ul class="feature-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div class="feature-text">
+                                <div class="feature-name">Loyalty & Rewards System</div>
+                                <div class="feature-desc">Encourage patients to return through a point-based reward
+                                    program.</div>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div class="feature-text">
+                                <div class="feature-name">AI-based Scheduling</div>
+                                <div class="feature-desc">Optimize appointment times to reduce waiting periods.</div>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div class="feature-text">
+                                <div class="feature-name">Multi-language Support</div>
+                                <div class="feature-desc">Cater to diverse patient groups.</div>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div class="feature-text">
+                                <div class="feature-name">Cloud Backup & Sync</div>
+                                <div class="feature-desc">Securely store and access data across devices.</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <footer>Made By Robert Bamba || 2025</footer>
+</body>
+
+<script src="./js/app.js"></script>
+
+</html>
