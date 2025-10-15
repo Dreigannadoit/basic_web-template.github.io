@@ -1,3 +1,15 @@
+const signature = 
+" ______   ______    _______  ___  \n" +
+"|      | |    _ |  |       ||   | \n" +
+"|  _    ||   | ||  |    ___||   | \n" +
+"| | |   ||   |_||_ |   |___ |   | \n" +
+"| |_|   ||    __  ||    ___||   | \n" +
+"|       ||   |  | ||   |___ |   | \n" +
+"|______| |___|  |_||_______||___| \n" +
+"                                  \n"
+
+console.log(signature)
+
 const track = document.getElementById("image-track");
 const nav = document.getElementById('nav');
 
