@@ -6,7 +6,7 @@
 
 :root{
     --background-color:  #bf9b30;
-    --main-color: rgb(4, 12, 49);
+    --main-color: hsl(229, 85%, 10%);
     --highlight-color: white;
 }
 

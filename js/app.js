@@ -1,4 +1,5 @@
 const track = document.getElementById("image-track");
+const nav = document.getElementById('nav');
 
 // Initialize the percentage data attributes
 track.dataset.mouseDownAt = "0";
@@ -34,6 +35,7 @@ const handleOnMove = (e) => {
         { duration: 1200, fill: "forwards" }
     );
 
+
     for (const image of track.getElementsByClassName("image")) {
         image.animate(
             {
@@ -41,6 +43,14 @@ const handleOnMove = (e) => {
             },
             { duration: 1200, fill: "forwards" }
         );
+
+        nav.animate(
+            {
+                backgroundColor: `hsl(229, ${10 + nextPercentage}%, ${10 - nextPercentage}%)`,
+            },
+            { duration: 1200, fill: "forwards" }
+        );
+
     }
 };
 
@@ -56,7 +66,7 @@ const sleep = (delay) => new Promise(resolve => setTimeout(resolve, delay));
 const transitioner = document.getElementById('transitioner');
 
 
-async function pushUserToLink(id, addBTNCls, addTranCls, link ){
+async function pushUserToLink(id, addBTNCls, addTranCls, link) {
     const button = document.getElementById(id);
     button.classList.add(addBTNCls);
     transitioner.classList.add(addTranCls);
@@ -65,45 +75,15 @@ async function pushUserToLink(id, addBTNCls, addTranCls, link ){
 }
 
 async function pushToIndex() {
-    pushUserToLink('link_index', 'active', 'active', "./index.html" )
+    pushUserToLink('link_index', 'active', 'active', "./index.html")
 }
 async function pushToIdea() {
-    pushUserToLink('link_index', 'active', 'active', "./idea.html" )
+    pushUserToLink('link_index', 'active', 'active', "./idea.html")
 }
 
 async function pushToTeam() {
-    pushUserToLink('link_index', 'active', 'active', "./team.html" )
+    pushUserToLink('link_index', 'active', 'active', "./team.html")
 }
 
-const toggleNav = () => {
-    const nav = document.getElementById('nav');
-    nav.classList.toggle('active');
-}
+const toggleNav = () => nav.classList.toggle('active');
 
-
-
-
-
-function typeWriter(element, text, speed = 50) {
-    let i = 0;
-    element.innerHTML = ''; // Clear existing content
-    
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-    
-    type();
-}
-
-// Usage
-const text = "The Dental Appointment App streamlines dental clinic operations by allowing patients to easily book and manage appointments while giving dentists efficient tools for scheduling, record-keeping, and reminders — improving convenience, communication, and overall care.";
-
-// Start typing when page loads
-window.addEventListener('DOMContentLoaded', () => {
-    const typewriterElement = document.getElementById('typewriter-text');
-    typeWriter(typewriterElement, text, 10); // Adjust speed as needed
-});
