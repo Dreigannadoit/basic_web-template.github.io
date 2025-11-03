@@ -11,6 +11,8 @@
         rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/index.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -35,8 +37,7 @@
             </li>
             <li>
                 <button onclick="pushToIdea()" id="link_idea">
-                    <img class="image" src="https://images.pexels.com/photos/5355709/pexels-photo-5355709.jpeg"
-            draggable=" false" />
+                    <img class="image" src="https://images.pexels.com/photos/5355709/pexels-photo-5355709.jpeg" draggable="false" />
 
                     <div class="info">
                         <h1>/idea.html</h1>
@@ -55,8 +56,6 @@
         </ul>
     </nav>
 
-
-
     <div class="wrapper">
         <header>
             <p>/idea</p>
@@ -67,13 +66,25 @@
         <main class="idea">
             <h1>My Proposal</h1>
             <p id="typewriter-text"></p>
+            
+            <!-- Requirement A: Problem/Solution Switcher -->
+            <div class="content-switcher">
+                <div id="problem-statement" class="content-block active">
+                    <h3>Problem Statement</h3>
+                    <p>Traditional dental clinic booking systems are often inefficient, leading to long wait times, scheduling conflicts, and poor patient experience. Manual appointment management creates administrative burden and reduces clinic efficiency.</p>
+                </div>
+                <div id="solution-description" class="content-block">
+                    <h3>Solution Description</h3>
+                    <p>LMAO Clinical Booking is a comprehensive digital platform that automates appointment scheduling, patient management, and clinic operations. Our solution reduces administrative workload by 60% and improves patient satisfaction through seamless booking experiences and intelligent scheduling algorithms.</p>
+                </div>
+                <button id="toggle-content" class="toggle-btn">View Solution</button>
+            </div>
         </main>
 
         <section class="idea summary">
             <details>
-                <summary>Better And Effecient</summary>
-                <p>The system aims to enhance patient experience, reduce administrative workload, and improve overall
-                    clinic efficiency through automation and intelligent scheduling.</p>
+                <summary>Better And Efficient</summary>
+                <p>The system aims to enhance patient experience, reduce administrative workload, and improve overall clinic efficiency through automation and intelligent scheduling.</p>
             </details>
         </section>
         <br>
@@ -82,188 +93,188 @@
         <br>
         <br>
 
+        <!-- Requirement B: Tabbed Interface -->
         <section class="idea features">
-            <div class="features-grid">
-                <!-- For Patients Card -->
-                <div class="feature-card patients-card">
-                    <div class="card-header">
-                        <div class="card-icon">
-                            <i class="fas fa-user-injured"></i>
-                        </div>
-                        <h2 class="card-title">For Patients</h2>
-                    </div>
-                    <ul class="feature-list">
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div class="feature-text">
-                                <div class="feature-name">Easy Appointment Booking</div>
-                                <div class="feature-desc">Schedule, reschedule, or cancel appointments with just a few
-                                    taps.</div>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div class="feature-text">
-                                <div class="feature-name">Dentist Directory</div>
-                                <div class="feature-desc">View dentist profiles, specialties, and availability.</div>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div class="feature-text">
-                                <div class="feature-name">Real-time Notifications</div>
-                                <div class="feature-desc">Receive SMS, email, or in-app reminders for upcoming
-                                    appointments.</div>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div class="feature-text">
-                                <div class="feature-name">Digital Dental Records</div>
-                                <div class="feature-desc">Access past treatments, prescriptions, and medical notes
-                                    securely.</div>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div class="feature-text">
-                                <div class="feature-name">Online Consultation</div>
-                                <div class="feature-desc">Video call or chat feature for quick dental advice or
-                                    follow-ups.</div>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div class="feature-text">
-                                <div class="feature-name">Feedback & Ratings</div>
-                                <div class="feature-desc">Leave reviews to help improve service quality.</div>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div class="feature-text">
-                                <div class="feature-name">Payment Integration</div>
-                                <div class="feature-desc">Pay consultation or treatment fees via credit card, GCash,
-                                    PayPal, etc.</div>
-                            </div>
-                        </li>
-                    </ul>
+            <div class="tabs-container">
+                <div class="tabs-header">
+                    <button class="tab-button active" data-tab="patients">For Patients</button>
+                    <button class="tab-button" data-tab="clinics">For Clinics & Dentists</button>
+                    <button class="tab-button" data-tab="addons">Optional Add-ons</button>
                 </div>
-
-                <!-- For Clinics & Dentists Card -->
-                <div class="feature-card clinics-card">
-                    <div class="card-header">
-                        <div class="card-icon">
-                            <i class="fas fa-hospital"></i>
+                
+                <div class="tab-content active" id="patients-tab">
+                    <div class="feature-card patients-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-user-injured"></i>
+                            </div>
+                            <h2 class="card-title">For Patients</h2>
                         </div>
-                        <h2 class="card-title">For Clinics & Dentists</h2>
+                        <ul class="feature-list">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div class="feature-text">
+                                    <div class="feature-name">Easy Appointment Booking</div>
+                                    <div class="feature-desc">Schedule, reschedule, or cancel appointments with just a few taps.</div>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div class="feature-text">
+                                    <div class="feature-name">Dentist Directory</div>
+                                    <div class="feature-desc">View dentist profiles, specialties, and availability.</div>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div class="feature-text">
+                                    <div class="feature-name">Real-time Notifications</div>
+                                    <div class="feature-desc">Receive SMS, email, or in-app reminders for upcoming appointments.</div>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div class="feature-text">
+                                    <div class="feature-name">Digital Dental Records</div>
+                                    <div class="feature-desc">Access past treatments, prescriptions, and medical notes securely.</div>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div class="feature-text">
+                                    <div class="feature-name">Online Consultation</div>
+                                    <div class="feature-desc">Video call or chat feature for quick dental advice or follow-ups.</div>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div class="feature-text">
+                                    <div class="feature-name">Feedback & Ratings</div>
+                                    <div class="feature-desc">Leave reviews to help improve service quality.</div>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div class="feature-text">
+                                    <div class="feature-name">Payment Integration</div>
+                                    <div class="feature-desc">Pay consultation or treatment fees via credit card, GCash, PayPal, etc.</div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                    <ul class="feature-list">
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div class="feature-text">
-                                <div class="feature-name">Smart Schedule Management</div>
-                                <div class="feature-desc">View, approve, or modify patient bookings in real-time.</div>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div class="feature-text">
-                                <div class="feature-name">Patient Record System</div>
-                                <div class="feature-desc">Maintain complete patient histories, including images and
-                                    notes.</div>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div class="feature-text">
-                                <div class="feature-name">Automated Reminders</div>
-                                <div class="feature-desc">Reduce no-shows with automated appointment reminders.</div>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div class="feature-text">
-                                <div class="feature-name">Analytics Dashboard</div>
-                                <div class="feature-desc">Track appointments, revenue, and clinic performance.</div>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div class="feature-text">
-                                <div class="feature-name">Staff Management</div>
-                                <div class="feature-desc">Assign tasks, monitor attendance, and manage multiple
-                                    branches.</div>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div class="feature-text">
-                                <div class="feature-name">Inventory Tracking</div>
-                                <div class="feature-desc">Monitor supplies and set alerts for low-stock dental
-                                    materials.</div>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div class="feature-text">
-                                <div class="feature-name">Data Security & Compliance</div>
-                                <div class="feature-desc">Ensure patient data is protected with encryption and access
-                                    control.</div>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
-
-                <!-- Optional Add-ons Card -->
-                <div class="feature-card addons-card">
-                    <div class="card-header">
-                        <div class="card-icon">
-                            <i class="fas fa-lightbulb"></i>
+                
+                <div class="tab-content" id="clinics-tab">
+                    <div class="feature-card clinics-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-hospital"></i>
+                            </div>
+                            <h2 class="card-title">For Clinics & Dentists</h2>
                         </div>
-                        <h2 class="card-title">Optional Add-ons</h2>
+                        <ul class="feature-list">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div class="feature-text">
+                                    <div class="feature-name">Smart Schedule Management</div>
+                                    <div class="feature-desc">View, approve, or modify patient bookings in real-time.</div>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div class="feature-text">
+                                    <div class="feature-name">Patient Record System</div>
+                                    <div class="feature-desc">Maintain complete patient histories, including images and notes.</div>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div class="feature-text">
+                                    <div class="feature-name">Automated Reminders</div>
+                                    <div class="feature-desc">Reduce no-shows with automated appointment reminders.</div>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div class="feature-text">
+                                    <div class="feature-name">Analytics Dashboard</div>
+                                    <div class="feature-desc">Track appointments, revenue, and clinic performance.</div>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div class="feature-text">
+                                    <div class="feature-name">Staff Management</div>
+                                    <div class="feature-desc">Assign tasks, monitor attendance, and manage multiple branches.</div>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div class="feature-text">
+                                    <div class="feature-name">Inventory Tracking</div>
+                                    <div class="feature-desc">Monitor supplies and set alerts for low-stock dental materials.</div>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div class="feature-text">
+                                    <div class="feature-name">Data Security & Compliance</div>
+                                    <div class="feature-desc">Ensure patient data is protected with encryption and access control.</div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                    <ul class="feature-list">
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div class="feature-text">
-                                <div class="feature-name">Loyalty & Rewards System</div>
-                                <div class="feature-desc">Encourage patients to return through a point-based reward
-                                    program.</div>
+                </div>
+                
+                <div class="tab-content" id="addons-tab">
+                    <div class="feature-card addons-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-lightbulb"></i>
                             </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div class="feature-text">
-                                <div class="feature-name">AI-based Scheduling</div>
-                                <div class="feature-desc">Optimize appointment times to reduce waiting periods.</div>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div class="feature-text">
-                                <div class="feature-name">Multi-language Support</div>
-                                <div class="feature-desc">Cater to diverse patient groups.</div>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div class="feature-text">
-                                <div class="feature-name">Cloud Backup & Sync</div>
-                                <div class="feature-desc">Securely store and access data across devices.</div>
-                            </div>
-                        </li>
-                    </ul>
+                            <h2 class="card-title">Optional Add-ons</h2>
+                        </div>
+                        <ul class="feature-list">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div class="feature-text">
+                                    <div class="feature-name">Loyalty & Rewards System</div>
+                                    <div class="feature-desc">Encourage patients to return through a point-based reward program.</div>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div class="feature-text">
+                                    <div class="feature-name">AI-based Scheduling</div>
+                                    <div class="feature-desc">Optimize appointment times to reduce waiting periods.</div>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div class="feature-text">
+                                    <div class="feature-name">Multi-language Support</div>
+                                    <div class="feature-desc">Cater to diverse patient groups.</div>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div class="feature-text">
+                                    <div class="feature-name">Cloud Backup & Sync</div>
+                                    <div class="feature-desc">Securely store and access data across devices.</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
     </div>
-
 
     <footer>Made By Robert Bamba || 2025</footer>
 </body>
 
 <script src="./js/app.js"></script>
 <script src="./js/typewriter.js"></script>
+<script src="./js/dom-manipulation.js"></script>
 
 </html>

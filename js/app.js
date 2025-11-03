@@ -1,4 +1,4 @@
-const signature = 
+const signature =
 " ______   ______    _______  ___  \n" +
 "|      | |    _ |  |       ||   | \n" +
 "|  _    ||   | ||  |    ___||   | \n" +
@@ -90,12 +90,59 @@ async function pushToIndex() {
     pushUserToLink('link_index', 'active', 'active', "./index.html")
 }
 async function pushToIdea() {
-    pushUserToLink('link_index', 'active', 'active', "./idea.html")
+    pushUserToLink('link_idea', 'active', 'active', "./idea.html")
 }
 
 async function pushToTeam() {
-    pushUserToLink('link_index', 'active', 'active', "./team.html")
+    pushUserToLink('link_team', 'active', 'active', "./team.html")
 }
 
 const toggleNav = () => nav.classList.toggle('active');
 
+
+// --- Requirement A: Essential DOM Manipulation (Problem/Solution Toggle) ---
+function toggleProblemSolution() {
+    const contentDisplay = document.getElementById('content-display');
+    const toggleButton = document.getElementById('toggle-content-btn');
+
+    const problemStatement = `**Problem Statement:** Dental clinic booking processes are often inefficient, leading to long waiting times, administrative burden, and patient dissatisfaction due to manual scheduling, no-shows, and difficulty in accessing patient records. This results in lost revenue for clinics and a poor experience for patients.`;
+    const solutionDescription = `**Solution Description:** Our proposed system offers a comprehensive online platform for dental clinics. It provides an intuitive interface for patients to book, reschedule, and cancel appointments, access digital records, and receive timely reminders. For clinics, it automates scheduling, streamlines patient management, and provides analytics, significantly enhancing efficiency and patient satisfaction.`;
+
+    if (contentDisplay.textContent.includes("Problem Statement")) {
+        contentDisplay.textContent = solutionDescription;
+        toggleButton.textContent = "Show Problem Statement";
+    } else {
+        contentDisplay.textContent = problemStatement;
+        toggleButton.textContent = "Show Solution Description";
+    }
+}
+
+// --- Requirement B: Advanced DOM Manipulation (Tabbed Interface) ---
+document.addEventListener('DOMContentLoaded', () => {
+    // Only set up tabs if on the idea page
+    if (document.body.classList.contains('idea')) {
+        setupTabInterface();
+    }
+});
+
+function setupTabInterface() {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove 'active' class from all buttons and content
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            // Add 'active' class to the clicked button
+            button.classList.add('active');
+
+            // Get the target tab ID from the data-tab attribute
+            const targetTabId = button.dataset.tab;
+
+            // Add 'active' class to the corresponding content
+            document.getElementById(targetTabId).classList.add('active');
+        });
+    });
+}
